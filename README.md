@@ -32,10 +32,65 @@ Normalizing the data
 Splitting the data into test and train
 
 ## PROGRAM:
-/Write your code here/
+```
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+```
+```
+df = pd.read_csv('Churn_Modelling.csv')
+df.head()
+```
+```
+# To split the dataset
+X = df.iloc[:,:-1].values
+Y = df.iloc[:,-1].values
+X
+Y
+```
+```
+df.isnull().sum()
+```
+```
+y = df.iloc[:,-1].values
+y
+```
+```
+df.duplicated()
+```
+```
+dl=['Surname','Geography','Gender']
+df=df.drop(dl,axis=1)
+```
+```
+df.head()
+```
+```
+df['EstimatedSalary'].describe()
+```
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y ,test_size = 0.2)
+```
+```
+X_train
+X_test
+len(X_train)
+len(X_test)
+```
 
 ## OUTPUT:
-/ Show the result/
+### 
+![headoutput](hdd.png)
+![Xooutput](X.png)
+![Youtput](Y.png)
+![nulloutput](null.png)
+![duplicteoutput](dup.png)
+![neweadoutput](nwhdd.png)
+![describeoutput](des.png)
+![normalizationoutput](norma.png)
+![traintestoutput](train.png)
 
 ## RESULT
-/Type your result here/
+Thus, the Data preprocessing is performed over a data set successfully.
